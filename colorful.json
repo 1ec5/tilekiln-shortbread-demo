@@ -10,7 +10,8 @@
 	"sources": {
 		"openhistoricalmap": {
 			"type": "vector",
-			"tiles": ["https://vtiles.openhistoricalmap.org/maps/osm/{z}/{x}/{y}.pbf"]
+			"tiles": ["https://vtiles.openhistoricalmap.org/maps/osm/{z}/{x}/{y}.pbf"],
+			"attribution": "<a href='https://www.openhistoricalmap.org/copyright'>OpenHistoricalMap</a>"
 		},
 		"versatiles-shortbread": {
 			"type": "vector",

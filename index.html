@@ -4,6 +4,8 @@
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
   <script src='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js'></script>
   <link href='https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css' rel='stylesheet' />
+  <script src='https://github.com/acalcutt/maplibre-gl-inspect/releases/download/v1.4.6/maplibre-gl-inspect.min.js'></script>
+  <link href='https://github.com/acalcutt/maplibre-gl-inspect/releases/download/v1.4.6/maplibre-gl-inspect.css' rel='stylesheet' />
   <style>
     #map {position: absolute; top: 0; right: 0; bottom: 0; left: 0;}
   </style>
@@ -19,6 +21,7 @@
       hash: true,
       maxZoom: 18
     });
+    map.addControl(new MaplibreInspect());
   </script>
 </body>
 </html>

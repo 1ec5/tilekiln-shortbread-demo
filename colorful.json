@@ -8,6 +8,11 @@
 	"glyphs": "https://tiles.versatiles.org/assets/glyphs/{fontstack}/{range}.pbf",
 	"sprite": "https://tiles.versatiles.org/assets/sprites/basics/sprites",
 	"sources": {
+		"openhistoricalmap": {
+			"type": "vector",
+			"tiles": ["https://vtiles.openhistoricalmap.org/maps/osm/{z}/{x}/{y}.pbf"],
+			"attribution": "<a href='https://www.openhistoricalmap.org/copyright'>OpenHistoricalMap</a>"
+		},
 		"versatiles-shortbread": {
 			"type": "vector",
 			"url": "https://vector.openstreetmap.org/shortbread_v1/tilejson.json"
@@ -1280,6 +1285,21 @@
 			}
 		},
 		{
+			"source": "openhistoricalmap",
+			"id": "tunnel-transport-monorail:outline_ohm",
+			"type": "line",
+			"source-layer": "transport_lines",
+			"filter": [ "all", [ "in", "type", "monorail" ], [ "has", "end_date" ], [ "!has", "service" ], [ "==", "tunnel", 1 ] ],
+			"minzoom": 15,
+			"paint": {
+				"line-color": "#b1bbc4",
+				"line-width": { "stops": [ [ 15, 0 ], [ 16, 5 ], [ 18, 7 ], [ 20, 20 ] ] },
+				"line-dasharray": [ 0.1, 0.5 ],
+				"line-opacity": 0.5,
+				"line-blur": 2
+			}
+		},
+		{
 			"source": "versatiles-shortbread",
 			"id": "tunnel-transport-monorail:outline",
 			"type": "line",
@@ -1303,6 +1323,21 @@
 				"line-color": "#b1bbc4",
 				"line-width": { "stops": [ [ 15, 0 ], [ 16, 5 ], [ 18, 7 ], [ 20, 20 ] ] },
 				"line-dasharray": [ 0.1, 0.5 ]
+			}
+		},
+		{
+			"source": "openhistoricalmap",
+			"id": "tunnel-transport-tram:outline_ohm",
+			"type": "line",
+			"source-layer": "transport_lines",
+			"filter": [ "all", [ "in", "type", "tram" ], [ "has", "end_date" ], [ "!has", "service" ], [ "==", "tunnel", 1 ] ],
+			"minzoom": 15,
+			"paint": {
+				"line-color": "#b1bbc4",
+				"line-width": { "stops": [ [ 15, 0 ], [ 16, 5 ], [ 18, 7 ], [ 20, 20 ] ] },
+				"line-dasharray": [ 0.1, 0.5 ],
+				"line-opacity": 0.5,
+				"line-blur": 2
 			}
 		},
 		{
@@ -1356,6 +1391,19 @@
 			}
 		},
 		{
+			"source": "openhistoricalmap",
+			"id": "tunnel-transport-rail:outline_ohm",
+			"type": "line",
+			"source-layer": "transport_lines",
+			"filter": [ "all", [ "in", "type", "rail" ], [ "has", "end_date" ], [ "!has", "service" ], [ "==", "tunnel", 1 ] ],
+			"paint": {
+				"line-color": "#b1bbc4",
+				"line-width": { "stops": [ [ 8, 1 ], [ 13, 1 ], [ 15, 3 ], [ 16, 4 ], [ 18, 8 ], [ 19, 11 ], [ 20, 14 ] ] },
+				"line-opacity": { "stops": [ [ 8, 0 ], [ 9, 0.15 ] ] },
+				"line-blur": 2
+			}
+		},
+		{
 			"source": "versatiles-shortbread",
 			"id": "tunnel-transport-rail:outline",
 			"type": "line",
@@ -1365,6 +1413,20 @@
 				"line-color": "#b1bbc4",
 				"line-width": { "stops": [ [ 8, 1 ], [ 13, 1 ], [ 15, 3 ], [ 16, 4 ], [ 18, 8 ], [ 19, 11 ], [ 20, 14 ] ] },
 				"line-opacity": { "stops": [ [ 8, 0 ], [ 9, 0.3 ] ] }
+			}
+		},
+		{
+			"source": "openhistoricalmap",
+			"id": "tunnel-transport-monorail_ohm",
+			"type": "line",
+			"source-layer": "transport_lines",
+			"filter": [ "all", [ "in", "type", "monorail" ], [ "has", "end_date" ], [ "!has", "service" ], [ "==", "tunnel", 1 ] ],
+			"minzoom": 13,
+			"paint": {
+				"line-width": { "stops": [ [ 13, 0 ], [ 16, 1 ], [ 17, 2 ], [ 18, 3 ], [ 20, 5 ] ] },
+				"line-color": "#b1bbc4",
+				"line-opacity": 0.5,
+				"line-blur": 2
 			}
 		},
 		{
@@ -1389,6 +1451,20 @@
 			"paint": {
 				"line-width": { "stops": [ [ 13, 0 ], [ 16, 1 ], [ 17, 2 ], [ 18, 3 ], [ 20, 5 ] ] },
 				"line-color": "#b1bbc4"
+			}
+		},
+		{
+			"source": "openhistoricalmap",
+			"id": "tunnel-transport-tram_ohm",
+			"type": "line",
+			"source-layer": "transport_lines",
+			"filter": [ "all", [ "in", "type", "tram" ], [ "has", "end_date" ], [ "!has", "service" ], [ "==", "tunnel", 1 ] ],
+			"minzoom": 13,
+			"paint": {
+				"line-width": { "stops": [ [ 13, 0 ], [ 16, 1 ], [ 17, 2 ], [ 18, 3 ], [ 20, 5 ] ] },
+				"line-color": "#b1bbc4",
+				"line-opacity": 0.5,
+				"line-blur": 2
 			}
 		},
 		{
@@ -1439,6 +1515,20 @@
 				"line-width": { "stops": [ [ 8, 1 ], [ 13, 1 ], [ 15, 2 ], [ 16, 3 ], [ 18, 6 ], [ 19, 8 ], [ 20, 10 ] ] },
 				"line-dasharray": [ 2, 2 ],
 				"line-opacity": { "stops": [ [ 14, 0 ], [ 15, 1 ] ] }
+			}
+		},
+		{
+			"source": "openhistoricalmap",
+			"id": "tunnel-transport-rail_ohm",
+			"type": "line",
+			"source-layer": "transport_lines",
+			"filter": [ "all", [ "in", "type", "rail" ], [ "has", "end_date" ], [ "!has", "service" ], [ "==", "tunnel", 1 ] ],
+			"paint": {
+				"line-color": "#e6e9ec",
+				"line-width": { "stops": [ [ 8, 1 ], [ 13, 1 ], [ 15, 2 ], [ 16, 3 ], [ 18, 6 ], [ 19, 8 ], [ 20, 10 ] ] },
+				"line-dasharray": [ 2, 2 ],
+				"line-opacity": { "stops": [ [ 14, 0 ], [ 15, 0.15 ] ] },
+				"line-blur": 2
 			}
 		},
 		{
@@ -2187,6 +2277,21 @@
 			}
 		},
 		{
+			"source": "openhistoricalmap",
+			"id": "transport-monorail:outline_ohm",
+			"type": "line",
+			"source-layer": "transport_lines",
+			"filter": [ "all", [ "in", "type", "monorail" ], [ "has", "end_date" ], [ "!has", "service" ], [ "!=", "bridge", 1 ], [ "!=", "tunnel", 1 ] ],
+			"minzoom": 15,
+			"paint": {
+				"line-color": "#b1bbc4",
+				"line-width": { "stops": [ [ 15, 0 ], [ 16, 5 ], [ 18, 7 ], [ 20, 20 ] ] },
+				"line-dasharray": [ 0.1, 0.5 ],
+				"line-opacity": 0.5,
+				"line-blur": 2
+			}
+		},
+		{
 			"source": "versatiles-shortbread",
 			"id": "transport-monorail:outline",
 			"type": "line",
@@ -2210,6 +2315,21 @@
 				"line-color": "#b1bbc4",
 				"line-width": { "stops": [ [ 15, 0 ], [ 16, 5 ], [ 18, 7 ], [ 20, 20 ] ] },
 				"line-dasharray": [ 0.1, 0.5 ]
+			}
+		},
+		{
+			"source": "openhistoricalmap",
+			"id": "transport-tram:outline_ohm",
+			"type": "line",
+			"source-layer": "transport_lines",
+			"filter": [ "all", [ "in", "type", "tram" ], [ "has", "end_date" ], [ "!has", "service" ], [ "!=", "bridge", 1 ], [ "!=", "tunnel", 1 ] ],
+			"minzoom": 15,
+			"paint": {
+				"line-color": "#b1bbc4",
+				"line-width": { "stops": [ [ 15, 0 ], [ 16, 5 ], [ 18, 7 ], [ 20, 20 ] ] },
+				"line-dasharray": [ 0.1, 0.5 ],
+				"line-opacity": 0.5,
+				"line-blur": 2
 			}
 		},
 		{
@@ -2263,6 +2383,19 @@
 			}
 		},
 		{
+			"source": "openhistoricalmap",
+			"id": "transport-rail:outline_ohm",
+			"type": "line",
+			"source-layer": "transport_lines",
+			"filter": [ "all", [ "in", "type", "rail" ], [ "has", "end_date" ], [ "!has", "service" ], [ "!=", "bridge", 1 ], [ "!=", "tunnel", 1 ] ],
+			"paint": {
+				"line-color": "#b1bbc4",
+				"line-width": { "stops": [ [ 8, 1 ], [ 13, 1 ], [ 15, 3 ], [ 16, 4 ], [ 18, 8 ], [ 19, 11 ], [ 20, 14 ] ] },
+				"line-opacity": { "stops": [ [ 8, 0 ], [ 9, 0.5 ] ] },
+				"line-blur": 2
+			}
+		},
+		{
 			"source": "versatiles-shortbread",
 			"id": "transport-rail:outline",
 			"type": "line",
@@ -2272,6 +2405,20 @@
 				"line-color": "#b1bbc4",
 				"line-width": { "stops": [ [ 8, 1 ], [ 13, 1 ], [ 15, 3 ], [ 16, 4 ], [ 18, 8 ], [ 19, 11 ], [ 20, 14 ] ] },
 				"line-opacity": { "stops": [ [ 8, 0 ], [ 9, 1 ] ] }
+			}
+		},
+		{
+			"source": "openhistoricalmap",
+			"id": "transport-monorail_ohm",
+			"type": "line",
+			"source-layer": "transport_lines",
+			"filter": [ "all", [ "in", "type", "monorail" ], [ "has", "end_date" ], [ "!has", "service" ], [ "!=", "bridge", 1 ], [ "!=", "tunnel", 1 ] ],
+			"minzoom": 13,
+			"paint": {
+				"line-width": { "stops": [ [ 13, 0 ], [ 16, 1 ], [ 17, 2 ], [ 18, 3 ], [ 20, 5 ] ] },
+				"line-color": "#b1bbc4",
+				"line-opacity": 0.5,
+				"line-blur": 2
 			}
 		},
 		{
@@ -2296,6 +2443,20 @@
 			"paint": {
 				"line-width": { "stops": [ [ 13, 0 ], [ 16, 1 ], [ 17, 2 ], [ 18, 3 ], [ 20, 5 ] ] },
 				"line-color": "#b1bbc4"
+			}
+		},
+		{
+			"source": "openhistoricalmap",
+			"id": "transport-tram_ohm",
+			"type": "line",
+			"source-layer": "transport_lines",
+			"filter": [ "all", [ "in", "type", "tram" ], [ "has", "end_date" ], [ "!has", "service" ], [ "!=", "bridge", 1 ], [ "!=", "tunnel", 1 ] ],
+			"minzoom": 13,
+			"paint": {
+				"line-width": { "stops": [ [ 13, 0 ], [ 16, 1 ], [ 17, 2 ], [ 18, 3 ], [ 20, 5 ] ] },
+				"line-color": "#b1bbc4",
+				"line-opacity": 0.5,
+				"line-blur": 2
 			}
 		},
 		{
@@ -2346,6 +2507,20 @@
 				"line-width": { "stops": [ [ 8, 1 ], [ 13, 1 ], [ 15, 2 ], [ 16, 3 ], [ 18, 6 ], [ 19, 8 ], [ 20, 10 ] ] },
 				"line-dasharray": [ 2, 2 ],
 				"line-opacity": { "stops": [ [ 14, 0 ], [ 15, 1 ] ] }
+			}
+		},
+		{
+			"source": "openhistoricalmap",
+			"id": "transport-rail_ohm",
+			"type": "line",
+			"source-layer": "transport_lines",
+			"filter": [ "all", [ "in", "type", "rail" ], [ "has", "end_date" ], [ "!has", "service" ], [ "!=", "bridge", 1 ], [ "!=", "tunnel", 1 ] ],
+			"paint": {
+				"line-color": "#e6e9ec",
+				"line-width": { "stops": [ [ 8, 1 ], [ 13, 1 ], [ 15, 2 ], [ 16, 3 ], [ 18, 6 ], [ 19, 8 ], [ 20, 10 ] ] },
+				"line-dasharray": [ 2, 2 ],
+				"line-opacity": { "stops": [ [ 14, 0 ], [ 15, 0.5 ] ] },
+				"line-blur": 2
 			}
 		},
 		{
@@ -3118,6 +3293,21 @@
 			}
 		},
 		{
+			"source": "openhistoricalmap",
+			"id": "bridge-transport-monorail:outline_ohm",
+			"type": "line",
+			"source-layer": "transport_lines",
+			"filter": [ "all", [ "in", "type", "monorail" ], [ "has", "end_date" ], [ "!has", "service" ], [ "==", "bridge", 1 ] ],
+			"minzoom": 15,
+			"paint": {
+				"line-color": "#b1bbc4",
+				"line-width": { "stops": [ [ 15, 0 ], [ 16, 5 ], [ 18, 7 ], [ 20, 20 ] ] },
+				"line-dasharray": [ 0.1, 0.5 ],
+				"line-opacity": 0.5,
+				"line-blur": 2
+			}
+		},
+		{
 			"source": "versatiles-shortbread",
 			"id": "bridge-transport-monorail:outline",
 			"type": "line",
@@ -3141,6 +3331,21 @@
 				"line-color": "#b1bbc4",
 				"line-width": { "stops": [ [ 15, 0 ], [ 16, 5 ], [ 18, 7 ], [ 20, 20 ] ] },
 				"line-dasharray": [ 0.1, 0.5 ]
+			}
+		},
+		{
+			"source": "openhistoricalmap",
+			"id": "bridge-transport-tram:outline_ohm",
+			"type": "line",
+			"source-layer": "transport_lines",
+			"filter": [ "all", [ "in", "type", "tram" ], [ "has", "end_date" ], [ "!has", "service" ], [ "==", "bridge", 1 ] ],
+			"minzoom": 15,
+			"paint": {
+				"line-color": "#b1bbc4",
+				"line-width": { "stops": [ [ 15, 0 ], [ 16, 5 ], [ 18, 7 ], [ 20, 20 ] ] },
+				"line-dasharray": [ 0.1, 0.5 ],
+				"line-opacity": 0.5,
+				"line-blur": 2
 			}
 		},
 		{
@@ -3194,6 +3399,19 @@
 			}
 		},
 		{
+			"source": "openhistoricalmap",
+			"id": "bridge-transport-rail:outline_ohm",
+			"type": "line",
+			"source-layer": "transport_lines",
+			"filter": [ "all", [ "in", "type", "rail" ], [ "has", "end_date" ], [ "!has", "service" ], [ "==", "bridge", 1 ] ],
+			"paint": {
+				"line-color": "#b1bbc4",
+				"line-width": { "stops": [ [ 8, 1 ], [ 13, 1 ], [ 15, 3 ], [ 16, 4 ], [ 18, 8 ], [ 19, 11 ], [ 20, 14 ] ] },
+				"line-opacity": { "stops": [ [ 8, 0 ], [ 9, 0.5 ] ] },
+				"line-blur": 2
+			}
+		},
+		{
 			"source": "versatiles-shortbread",
 			"id": "bridge-transport-rail:outline",
 			"type": "line",
@@ -3203,6 +3421,20 @@
 				"line-color": "#b1bbc4",
 				"line-width": { "stops": [ [ 8, 1 ], [ 13, 1 ], [ 15, 3 ], [ 16, 4 ], [ 18, 8 ], [ 19, 11 ], [ 20, 14 ] ] },
 				"line-opacity": { "stops": [ [ 8, 0 ], [ 9, 1 ] ] }
+			}
+		},
+		{
+			"source": "openhistoricalmap",
+			"id": "bridge-transport-monorail_ohm",
+			"type": "line",
+			"source-layer": "transport_lines",
+			"filter": [ "all", [ "in", "type", "monorail" ], [ "has", "end_date" ], [ "!has", "service" ], [ "==", "bridge", 1 ] ],
+			"minzoom": 13,
+			"paint": {
+				"line-width": { "stops": [ [ 13, 0 ], [ 16, 1 ], [ 17, 2 ], [ 18, 3 ], [ 20, 5 ] ] },
+				"line-color": "#b1bbc4",
+				"line-opacity": 0.5,
+				"line-blur": 2
 			}
 		},
 		{
@@ -3227,6 +3459,20 @@
 			"paint": {
 				"line-width": { "stops": [ [ 13, 0 ], [ 16, 1 ], [ 17, 2 ], [ 18, 3 ], [ 20, 5 ] ] },
 				"line-color": "#b1bbc4"
+			}
+		},
+		{
+			"source": "openhistoricalmap",
+			"id": "bridge-transport-tram_ohm",
+			"type": "line",
+			"source-layer": "transport_lines",
+			"filter": [ "all", [ "in", "type", "tram" ], [ "has", "end_date" ], [ "!has", "service" ], [ "==", "bridge", 1 ] ],
+			"minzoom": 13,
+			"paint": {
+				"line-width": { "stops": [ [ 13, 0 ], [ 16, 1 ], [ 17, 2 ], [ 18, 3 ], [ 20, 5 ] ] },
+				"line-color": "#b1bbc4",
+				"line-opacity": 0.5,
+				"line-blur": 2
 			}
 		},
 		{
@@ -3277,6 +3523,20 @@
 				"line-width": { "stops": [ [ 8, 1 ], [ 13, 1 ], [ 15, 2 ], [ 16, 3 ], [ 18, 6 ], [ 19, 8 ], [ 20, 10 ] ] },
 				"line-dasharray": [ 2, 2 ],
 				"line-opacity": { "stops": [ [ 14, 0 ], [ 15, 1 ] ] }
+			}
+		},
+		{
+			"source": "openhistoricalmap",
+			"id": "bridge-transport-rail_ohm",
+			"type": "line",
+			"source-layer": "transport_lines",
+			"filter": [ "all", [ "in", "type", "rail" ], [ "has", "end_date" ], [ "!has", "service" ], [ "==", "bridge", 1 ] ],
+			"paint": {
+				"line-color": "#e6e9ec",
+				"line-width": { "stops": [ [ 8, 1 ], [ 13, 1 ], [ 15, 2 ], [ 16, 3 ], [ 18, 6 ], [ 19, 8 ], [ 20, 10 ] ] },
+				"line-dasharray": [ 2, 2 ],
+				"line-opacity": { "stops": [ [ 14, 0 ], [ 15, 0.5 ] ] },
+				"line-blur": 2
 			}
 		},
 		{
@@ -4224,6 +4484,34 @@
 				"text-halo-blur": 1
 			},
 			"minzoom": 14
+		},
+		{
+			"source": "openhistoricalmap",
+			"id": "symbol-transit-station_ohm",
+			"type": "symbol",
+			"source-layer": "transport_lines",
+			"filter": [ "all", [ "in", "type", "station", "halt" ], [ "has", "end_date" ] ],
+			"layout": {
+				"text-field": "{name}",
+				"icon-size": { "stops": [ [ 13, 0.5 ], [ 15, 1 ] ] },
+				"symbol-placement": "point",
+				"icon-keep-upright": true,
+				"text-font": [ "noto_sans_regular" ],
+				"text-size": 10,
+				"icon-anchor": "bottom",
+				"text-anchor": "top",
+				"icon-image": "icon-rail"
+			},
+			"paint": {
+				"icon-opacity": 0.35,
+				"icon-color": "#66626a",
+				"text-color": "#66626a",
+				"text-halo-color": "rgba(255, 255, 255, 0.8)",
+				"text-halo-width": 2,
+				"text-halo-blur": 1,
+				"text-opacity": 0.5
+			},
+			"minzoom": 13
 		},
 		{
 			"source": "versatiles-shortbread",
